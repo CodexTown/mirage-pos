@@ -1,10 +1,11 @@
 ---
 id: "202605211259-MK1WJQ"
 title: "Document Mirage solution presentation and usage guide"
-status: "DOING"
+result_summary: "Added Mirage solution presentation and detailed usage guide."
+status: "DONE"
 priority: "med"
 owner: "DOCS"
-revision: 9
+revision: 11
 origin:
   system: "manual"
 depends_on: []
@@ -18,15 +19,31 @@ plan_approval:
   note: null
 verification:
   state: "ok"
-  updated_at: "2026-05-21T13:04:36.052Z"
-  updated_by: "DOCS"
-  note: "Docs added and verified: routing check passed, agentplane doctor passed, markdown local-link check passed, and content was reviewed against current repository configs, scripts, README, and existing docs."
+  updated_at: "2026-05-21T13:07:33.628Z"
+  updated_by: "EVALUATOR"
+  note: "EVALUATOR quality gate passed: commit f2b8b8c contains only the active task artifact and two approved docs files; DOCS verification recorded passing policy routing, agentplane doctor, local markdown link check, and factual consistency review. Residual risk: broader project files remain untracked from pre-existing workspace state and were intentionally not included."
   attempts: 0
-commit: null
+quality_review:
+  state: "pass"
+  updated_at: "2026-05-21T13:07:33.628Z"
+  updated_by: "EVALUATOR"
+  note: "EVALUATOR quality gate passed: commit f2b8b8c contains only the active task artifact and two approved docs files; DOCS verification recorded passing policy routing, agentplane doctor, local markdown link check, and factual consistency review. Residual risk: broader project files remain untracked from pre-existing workspace state and were intentionally not included."
+  evaluated_sha: "f2b8b8cdfba1fcbff95f0588d362f8331e8fbe61"
+  blueprint_digest: "14062b685a731be12a00abddcb40ca4dd85be57e2472f76ff51e3f6b8a74dd57"
+  evidence_refs:
+    - ".agentplane/tasks/202605211259-MK1WJQ/README.md"
+    - "/Users/densmirnov/Github/mirage-pos/.agentplane/tasks/202605211259-MK1WJQ/blueprint/resolved-snapshot.json"
+  findings: []
+commit:
+  hash: "f2b8b8cdfba1fcbff95f0588d362f8331e8fbe61"
+  message: "🚧 MK1WJQ task: document Mirage solution and usage"
 comments:
   -
     author: "DOCS"
     body: "Start: Writing presentation and usage documentation for the Mirage POS context workspace from current repository configs, scripts, and existing docs."
+  -
+    author: "DOCS"
+    body: "Verified: Added docs/solution-presentation.md and docs/usage-guide.md, verified policy routing, agentplane doctor, markdown local links, factual consistency against current workspace configs and existing docs, and EVALUATOR quality gate."
 events:
   -
     type: "status"
@@ -41,8 +58,21 @@ events:
     author: "DOCS"
     state: "ok"
     note: "Docs added and verified: routing check passed, agentplane doctor passed, markdown local-link check passed, and content was reviewed against current repository configs, scripts, README, and existing docs."
+  -
+    type: "verify"
+    at: "2026-05-21T13:07:33.628Z"
+    author: "EVALUATOR"
+    state: "ok"
+    note: "EVALUATOR quality gate passed: commit f2b8b8c contains only the active task artifact and two approved docs files; DOCS verification recorded passing policy routing, agentplane doctor, local markdown link check, and factual consistency review. Residual risk: broader project files remain untracked from pre-existing workspace state and were intentionally not included."
+  -
+    type: "status"
+    at: "2026-05-21T13:07:40.398Z"
+    author: "DOCS"
+    from: "DOING"
+    to: "DONE"
+    note: "Verified: Added docs/solution-presentation.md and docs/usage-guide.md, verified policy routing, agentplane doctor, markdown local links, factual consistency against current workspace configs and existing docs, and EVALUATOR quality gate."
 doc_version: 3
-doc_updated_at: "2026-05-21T13:04:36.200Z"
+doc_updated_at: "2026-05-21T13:07:40.400Z"
 doc_updated_by: "DOCS"
 description: "Create repository documentation that presents the Mirage context workspace solution and gives a detailed usage guide grounded in the current workspace, configs, and scripts."
 sections:
@@ -93,6 +123,25 @@ sections:
     Attempts: 0
 
     VerifyStepsRef: doc_version=3, doc_updated_at=2026-05-21T13:04:17.122Z, excerpt_hash=sha256:b8ab9b912359c72f2af55f360ec9643c0d65e63639b23da30b384c688bf4582d
+
+    Details:
+
+    BlueprintSnapshotRef:
+    - state: current
+    - path: /Users/densmirnov/Github/mirage-pos/.agentplane/tasks/202605211259-MK1WJQ/blueprint/resolved-snapshot.json
+    - old_digest: 14062b685a731be12a00abddcb40ca4dd85be57e2472f76ff51e3f6b8a74dd57
+    - current_digest: 14062b685a731be12a00abddcb40ca4dd85be57e2472f76ff51e3f6b8a74dd57
+    - route_changed: no
+    - safe_command: agentplane blueprint snapshot 202605211259-MK1WJQ
+
+    ### 2026-05-21T13:07:33.628Z — VERIFY — ok
+
+    By: EVALUATOR
+
+    Note: EVALUATOR quality gate passed: commit f2b8b8c contains only the active task artifact and two approved docs files; DOCS verification recorded passing policy routing, agentplane doctor, local markdown link check, and factual consistency review. Residual risk: broader project files remain untracked from pre-existing workspace state and were intentionally not included.
+    Attempts: 0
+
+    VerifyStepsRef: doc_version=3, doc_updated_at=2026-05-21T13:04:36.200Z, excerpt_hash=sha256:b8ab9b912359c72f2af55f360ec9643c0d65e63639b23da30b384c688bf4582d
 
     Details:
 
@@ -166,6 +215,25 @@ Note: Docs added and verified: routing check passed, agentplane doctor passed, m
 Attempts: 0
 
 VerifyStepsRef: doc_version=3, doc_updated_at=2026-05-21T13:04:17.122Z, excerpt_hash=sha256:b8ab9b912359c72f2af55f360ec9643c0d65e63639b23da30b384c688bf4582d
+
+Details:
+
+BlueprintSnapshotRef:
+- state: current
+- path: /Users/densmirnov/Github/mirage-pos/.agentplane/tasks/202605211259-MK1WJQ/blueprint/resolved-snapshot.json
+- old_digest: 14062b685a731be12a00abddcb40ca4dd85be57e2472f76ff51e3f6b8a74dd57
+- current_digest: 14062b685a731be12a00abddcb40ca4dd85be57e2472f76ff51e3f6b8a74dd57
+- route_changed: no
+- safe_command: agentplane blueprint snapshot 202605211259-MK1WJQ
+
+### 2026-05-21T13:07:33.628Z — VERIFY — ok
+
+By: EVALUATOR
+
+Note: EVALUATOR quality gate passed: commit f2b8b8c contains only the active task artifact and two approved docs files; DOCS verification recorded passing policy routing, agentplane doctor, local markdown link check, and factual consistency review. Residual risk: broader project files remain untracked from pre-existing workspace state and were intentionally not included.
+Attempts: 0
+
+VerifyStepsRef: doc_version=3, doc_updated_at=2026-05-21T13:04:36.200Z, excerpt_hash=sha256:b8ab9b912359c72f2af55f360ec9643c0d65e63639b23da30b384c688bf4582d
 
 Details:
 
