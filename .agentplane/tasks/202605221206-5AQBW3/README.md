@@ -4,7 +4,7 @@ title: "Add Mirage setup skill and publish repo"
 status: "DOING"
 priority: "med"
 owner: "DOCS"
-revision: 8
+revision: 10
 origin:
   system: "manual"
 depends_on: []
@@ -18,10 +18,21 @@ plan_approval:
   note: "User explicitly approved skill creation, commit, remote add, and push."
 verification:
   state: "ok"
-  updated_at: "2026-05-22T12:08:49.333Z"
-  updated_by: "DOCS"
-  note: "Verified: skill frontmatter parsed; git diff --check passed; node .agentplane/policy/check-routing.mjs passed; ap doctor passed; ignored files exclude .env, snapshots, caches; secret scan found only documented placeholder examples, no real secret values."
+  updated_at: "2026-05-22T12:10:33.014Z"
+  updated_by: "EVALUATOR"
+  note: "EVALUATOR quality gate passed: skill frontmatter and workflow inspected; git diff --check passed; policy routing passed; ap doctor passed; push to origin/main succeeded; no real secrets were staged."
   attempts: 0
+quality_review:
+  state: "pass"
+  updated_at: "2026-05-22T12:10:33.014Z"
+  updated_by: "EVALUATOR"
+  note: "EVALUATOR quality gate passed: skill frontmatter and workflow inspected; git diff --check passed; policy routing passed; ap doctor passed; push to origin/main succeeded; no real secrets were staged."
+  evaluated_sha: "c3827cf73f6eb5c12494e6b8d4fd57904486e98e"
+  blueprint_digest: "cec5b9055d73f6c7dce3c65c129b691910799c67df4d47c1dfbf2eec969fa56d"
+  evidence_refs:
+    - ".agentplane/tasks/202605221206-5AQBW3/README.md"
+    - "/Users/densmirnov/Desktop/pres_mirage/mirage-pos/.agentplane/tasks/202605221206-5AQBW3/blueprint/resolved-snapshot.json"
+  findings: []
 commit: null
 comments:
   -
@@ -41,8 +52,14 @@ events:
     author: "DOCS"
     state: "ok"
     note: "Verified: skill frontmatter parsed; git diff --check passed; node .agentplane/policy/check-routing.mjs passed; ap doctor passed; ignored files exclude .env, snapshots, caches; secret scan found only documented placeholder examples, no real secret values."
+  -
+    type: "verify"
+    at: "2026-05-22T12:10:33.014Z"
+    author: "EVALUATOR"
+    state: "ok"
+    note: "EVALUATOR quality gate passed: skill frontmatter and workflow inspected; git diff --check passed; policy routing passed; ap doctor passed; push to origin/main succeeded; no real secrets were staged."
 doc_version: 3
-doc_updated_at: "2026-05-22T12:08:49.372Z"
+doc_updated_at: "2026-05-22T12:10:33.034Z"
 doc_updated_by: "DOCS"
 description: "Create a repo-local Codex skill for agent-led Mirage setup, verify the documentation-only changes, commit the mirage-pos repository, add the GitHub origin, and push main."
 sections:
@@ -82,11 +99,51 @@ sections:
     - route_changed: no
     - safe_command: agentplane blueprint snapshot 202605221206-5AQBW3
 
+    ### 2026-05-22T12:10:33.014Z — VERIFY — ok
+
+    By: EVALUATOR
+
+    Note: EVALUATOR quality gate passed: skill frontmatter and workflow inspected; git diff --check passed; policy routing passed; ap doctor passed; push to origin/main succeeded; no real secrets were staged.
+    Attempts: 0
+
+    VerifyStepsRef: doc_version=3, doc_updated_at=2026-05-22T12:10:16.413Z, excerpt_hash=sha256:098a5282bdae9950156b42c76f98d03ee1b3fb31655d876f54c03245a1a2af95
+
+    Details:
+
+    BlueprintSnapshotRef:
+    - state: current
+    - path: /Users/densmirnov/Desktop/pres_mirage/mirage-pos/.agentplane/tasks/202605221206-5AQBW3/blueprint/resolved-snapshot.json
+    - old_digest: cec5b9055d73f6c7dce3c65c129b691910799c67df4d47c1dfbf2eec969fa56d
+    - current_digest: cec5b9055d73f6c7dce3c65c129b691910799c67df4d47c1dfbf2eec969fa56d
+    - route_changed: no
+    - safe_command: agentplane blueprint snapshot 202605221206-5AQBW3
+
     <!-- END VERIFICATION RESULTS -->
   Rollback Plan: |-
     - Revert task-related commit(s).
     - Re-run required checks to confirm rollback safety.
-  Findings: ""
+  Findings: |-
+    Command: git diff --check
+    Result: pass
+    Evidence: no whitespace or diff hygiene errors.
+    Scope: staged mirage-pos docs, config, context, and skill files.
+
+    Command: node .agentplane/policy/check-routing.mjs
+    Result: pass
+    Evidence: policy routing OK.
+    Scope: repository policy routing.
+
+    Command: ap doctor
+    Result: pass
+    Evidence: doctor OK with errors=0 warnings=0.
+    Scope: AgentPlane runtime health.
+
+    Command: git push -u origin main
+    Result: pass
+    Evidence: new branch main pushed to https://github.com/CodexTown/mirage-pos.git and set to track origin/main.
+    Scope: mirage-pos repository only.
+
+    Residual note: secret scan matched only documented placeholders/examples such as GOOGLE_REFRESH_TOKEN=... and no real secret values were found.
 id_source: "generated"
 ---
 ## Summary
@@ -136,6 +193,25 @@ BlueprintSnapshotRef:
 - route_changed: no
 - safe_command: agentplane blueprint snapshot 202605221206-5AQBW3
 
+### 2026-05-22T12:10:33.014Z — VERIFY — ok
+
+By: EVALUATOR
+
+Note: EVALUATOR quality gate passed: skill frontmatter and workflow inspected; git diff --check passed; policy routing passed; ap doctor passed; push to origin/main succeeded; no real secrets were staged.
+Attempts: 0
+
+VerifyStepsRef: doc_version=3, doc_updated_at=2026-05-22T12:10:16.413Z, excerpt_hash=sha256:098a5282bdae9950156b42c76f98d03ee1b3fb31655d876f54c03245a1a2af95
+
+Details:
+
+BlueprintSnapshotRef:
+- state: current
+- path: /Users/densmirnov/Desktop/pres_mirage/mirage-pos/.agentplane/tasks/202605221206-5AQBW3/blueprint/resolved-snapshot.json
+- old_digest: cec5b9055d73f6c7dce3c65c129b691910799c67df4d47c1dfbf2eec969fa56d
+- current_digest: cec5b9055d73f6c7dce3c65c129b691910799c67df4d47c1dfbf2eec969fa56d
+- route_changed: no
+- safe_command: agentplane blueprint snapshot 202605221206-5AQBW3
+
 <!-- END VERIFICATION RESULTS -->
 
 ## Rollback Plan
@@ -144,3 +220,25 @@ BlueprintSnapshotRef:
 - Re-run required checks to confirm rollback safety.
 
 ## Findings
+
+Command: git diff --check
+Result: pass
+Evidence: no whitespace or diff hygiene errors.
+Scope: staged mirage-pos docs, config, context, and skill files.
+
+Command: node .agentplane/policy/check-routing.mjs
+Result: pass
+Evidence: policy routing OK.
+Scope: repository policy routing.
+
+Command: ap doctor
+Result: pass
+Evidence: doctor OK with errors=0 warnings=0.
+Scope: AgentPlane runtime health.
+
+Command: git push -u origin main
+Result: pass
+Evidence: new branch main pushed to https://github.com/CodexTown/mirage-pos.git and set to track origin/main.
+Scope: mirage-pos repository only.
+
+Residual note: secret scan matched only documented placeholders/examples such as GOOGLE_REFRESH_TOKEN=... and no real secret values were found.
