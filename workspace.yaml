@@ -1,0 +1,24 @@
+mode: WRITE
+
+mounts:
+  /scratch:
+    resource: ram
+    mode: WRITE
+
+  /context:
+    resource: disk
+    mode: WRITE
+    config:
+      root: ${MIRAGE_POS_ROOT}/context
+
+  /docs:
+    resource: disk
+    mode: READ
+    config:
+      root: ${MIRAGE_POS_ROOT}/docs
+
+  /config:
+    resource: disk
+    mode: READ
+    config:
+      root: ${MIRAGE_POS_ROOT}/config

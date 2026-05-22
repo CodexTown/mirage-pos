@@ -1,0 +1,64 @@
+mode: READ
+
+mounts:
+  /scratch:
+    resource: ram
+    mode: WRITE
+
+  /context:
+    resource: disk
+    mode: WRITE
+    config:
+      root: ${MIRAGE_POS_ROOT}/context
+
+  /docs:
+    resource: disk
+    mode: READ
+    config:
+      root: ${MIRAGE_POS_ROOT}/docs
+
+  /config:
+    resource: disk
+    mode: READ
+    config:
+      root: ${MIRAGE_POS_ROOT}/config
+
+  /gmail:
+    resource: gmail
+    mode: READ
+    config:
+      client_id: ${GOOGLE_CLIENT_ID}
+      client_secret: ${GOOGLE_CLIENT_SECRET}
+      refresh_token: ${GOOGLE_REFRESH_TOKEN}
+
+  /gdrive:
+    resource: gdrive
+    mode: READ
+    config:
+      client_id: ${GOOGLE_CLIENT_ID}
+      client_secret: ${GOOGLE_CLIENT_SECRET}
+      refresh_token: ${GOOGLE_REFRESH_TOKEN}
+
+  /gdocs:
+    resource: gdocs
+    mode: READ
+    config:
+      client_id: ${GOOGLE_CLIENT_ID}
+      client_secret: ${GOOGLE_CLIENT_SECRET}
+      refresh_token: ${GOOGLE_REFRESH_TOKEN}
+
+  /gsheets:
+    resource: gsheets
+    mode: READ
+    config:
+      client_id: ${GOOGLE_CLIENT_ID}
+      client_secret: ${GOOGLE_CLIENT_SECRET}
+      refresh_token: ${GOOGLE_REFRESH_TOKEN}
+
+  /gslides:
+    resource: gslides
+    mode: READ
+    config:
+      client_id: ${GOOGLE_CLIENT_ID}
+      client_secret: ${GOOGLE_CLIENT_SECRET}
+      refresh_token: ${GOOGLE_REFRESH_TOKEN}

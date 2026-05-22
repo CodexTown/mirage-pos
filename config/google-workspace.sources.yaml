@@ -1,0 +1,45 @@
+version: 1
+channel: google_workspace
+status: pending_credentials
+auth:
+  type: oauth2_refresh_token
+  env:
+    - GOOGLE_CLIENT_ID
+    - GOOGLE_CLIENT_SECRET
+    - GOOGLE_REFRESH_TOKEN
+recommended_mounts:
+  gmail:
+    mount: /gmail
+    resource: gmail
+    mode: READ
+    purpose: "Mailbox labels, messages, threads, attachments metadata."
+  gdrive:
+    mount: /gdrive
+    resource: gdrive
+    mode: READ
+    purpose: "Drive tree, metadata, regular files, Google-native file wrappers."
+  gdocs:
+    mount: /gdocs
+    resource: gdocs
+    mode: READ
+    purpose: "Google Docs structured JSON."
+  gsheets:
+    mount: /gsheets
+    resource: gsheets
+    mode: READ
+    purpose: "Google Sheets JSON and range reads."
+  gslides:
+    mount: /gslides
+    resource: gslides
+    mode: READ
+    purpose: "Google Slides structured JSON."
+policy:
+  first_sync_mode: read_only
+  write_back: disabled_until_explicit_approval
+  snapshot_credentials: redacted_by_mirage
+  token_storage: ".env only"
+first_checks:
+  - "mirage workspace create workspace.google.template.yaml --id mirage-google"
+  - "mirage execute -w mirage-google -c 'ls /gdrive/'"
+  - "mirage execute -w mirage-google -c 'ls /gmail/'"
+  - "mirage provision -w mirage-google -c 'find /gdrive -maxdepth 2 -type f | head -50'"

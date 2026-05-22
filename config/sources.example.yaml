@@ -1,0 +1,53 @@
+version: 1
+status: template
+owner: densmirnov
+purpose: "Describe channels that should become Mirage mounts or imported snapshots."
+
+channels:
+  google_workspace:
+    enabled: false
+    mounts: [gmail, gdrive, gdocs, gsheets, gslides]
+    priority: high
+    auth: oauth2_refresh_token
+    sync_mode: read_first
+    notes: "Use for mail, docs, sheets, slides, and drive context."
+
+  github:
+    enabled: false
+    mounts: [github, github_ci]
+    priority: high
+    auth: personal_access_token
+    sync_mode: read_first
+    notes: "Use for repositories, issues, pull requests, actions logs, and release traces."
+
+  messaging:
+    enabled: false
+    mounts: [slack, telegram, discord, email]
+    priority: medium
+    auth: bot_or_mailbox_credentials
+    sync_mode: read_first
+    notes: "Use for channel history, decisions, attachments, and operational context."
+
+  planning:
+    enabled: false
+    mounts: [notion, linear, trello]
+    priority: medium
+    auth: api_token
+    sync_mode: read_first
+    notes: "Use for tasks, plans, specs, and knowledge bases."
+
+  storage:
+    enabled: false
+    mounts: [s3, r2, gcs, supabase, dropbox, box]
+    priority: medium
+    auth: provider_credentials
+    sync_mode: read_first
+    notes: "Use for exports, files, logs, datasets, and archives."
+
+  databases:
+    enabled: false
+    mounts: [postgres, mongodb, redis]
+    priority: low
+    auth: connection_string
+    sync_mode: read_only
+    notes: "Use only when database context is needed and access boundaries are explicit."

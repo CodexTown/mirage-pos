@@ -1,0 +1,32 @@
+version: 1
+workspace_id: mirage-pos
+created_for: "local context collection and future Mirage synchronization"
+
+local_paths:
+  raw_inbox: context/00-inbox
+  profile: context/10-profile
+  source_registry: context/20-sources
+  extracted: context/30-extracted
+  summaries: context/40-summaries
+  archive: context/90-archive
+
+default_rules:
+  external_mounts_start_read_only: true
+  write_back_requires_explicit_approval: true
+  secrets_allowed_in_repo_files: false
+  snapshots_directory: snapshots
+  preferred_formats: [md, json, jsonl, yaml, csv]
+
+normalization_targets:
+  decisions: context/30-extracted/decisions.jsonl
+  people: context/30-extracted/people.jsonl
+  projects: context/30-extracted/projects.jsonl
+  tasks: context/30-extracted/tasks.jsonl
+  glossary: context/40-summaries/glossary.md
+  daily_index: context/40-summaries/daily-index.md
+
+open_questions:
+  - "Which channels are actually used?"
+  - "Which channels may be read by agents?"
+  - "Which channels may be written back to by agents?"
+  - "What should be treated as private, sensitive, or out of scope?"

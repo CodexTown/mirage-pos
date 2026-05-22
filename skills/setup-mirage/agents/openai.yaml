@@ -1,0 +1,3 @@
+display_name: Setup Mirage
+short_description: Configure mirage-pos as a safe Mirage context workspace.
+default_prompt: Use this skill to configure Mirage in the mirage-pos repository, starting with local read-only-safe checks, scoped channel selection, credential boundaries, and verification before wider ingestion.
